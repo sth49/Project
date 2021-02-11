@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import os
 from pathlib import Path
 import random
@@ -11,10 +5,7 @@ import calendar
 import datetime
 import pickle
 from glob import glob
-
-
-# In[2]:
-
+import sys
 
 Lotto_List = []
 
@@ -165,12 +156,6 @@ def result():
         print("|Game   ",i," : ",game[0],"    ",r,"     ",match,"     ",win[match],"   |")
     print("="*62)
 
-    
-
-
-# In[3]:
-
-
 p = Path('LotteryProgram')
 try:
     p.mkdir()
@@ -183,14 +168,11 @@ except FileExistsError as e:
     print(e)
 os.chdir('LotteryProgram\\data')
 
-
-# In[4]:
-
-
 option = ''
 while option != '5'and option != 'Q' and option !='q':
     menu()
-    option=input('Select Menu : ')
+    
+    option = input('Select Menu : ')
     
     if option == '1' or option == 'c' or option == 'C':
         creation()
@@ -217,3 +199,4 @@ while option != '5'and option != 'Q' and option !='q':
         print('\nPlease input the correct option\n')
 
 print("Exit the Program")
+    
